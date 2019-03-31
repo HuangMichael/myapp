@@ -1,7 +1,5 @@
-package com.huangbin.service;
+package com.huangbin.user;
 
-import com.huangbin.dao.UserMapper;
-import com.huangbin.domain.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

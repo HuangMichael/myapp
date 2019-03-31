@@ -1,8 +1,11 @@
-package com.huangbin.domain;
+package com.huangbin.user;
 
 
 import lombok.Data;
 
+/**
+ * 用户信息
+ */
 @Data
 public class User {
     private Integer id;

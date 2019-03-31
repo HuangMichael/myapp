@@ -1,6 +1,6 @@
 package com.huangbin.utils;
 
-import com.huangbin.domain.User;
+import com.huangbin.user.User;
 
 /**
  *

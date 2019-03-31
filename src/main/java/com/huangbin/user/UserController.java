@@ -1,8 +1,7 @@
-package com.huangbin.controller;
+package com.huangbin.user;
 
 
-import com.huangbin.domain.User;
-import com.huangbin.service.UserService;
+import com.huangbin.controller.BaseController;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

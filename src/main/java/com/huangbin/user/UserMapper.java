@@ -1,14 +1,16 @@
-package com.huangbin.service;
+package com.huangbin.user;
 
-
-import com.huangbin.domain.User;
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * 用户信息映射类
+ */
+@Mapper
+public interface UserMapper {
 
-@Service
-public interface UserService {
     /**
      * @return
      */
@@ -20,6 +22,7 @@ public interface UserService {
      */
     User getOne();
 
+
     /**
      * @param userName
      */
@@ -30,12 +33,14 @@ public interface UserService {
      * @param user
      * @return
      */
-    User findByUserNameAndPassword(User user);
+    User findByUserNameAndPassword(@Param("user") User user);
 
 
     /**
      * @param userName
      * @return
      */
-    User getUserByUserName(String userName);
+    User getUserByUserName(@Param("userName") String userName);
+
+
 }
