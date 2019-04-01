@@ -1,18 +1,21 @@
 package com.huangbin.user;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 用户信息
  */
 @Data
+@Getter
+@Setter
 public class User {
     private Integer id;
     private String userName;
     private String nickName;
-    @JsonIgnore
     private String password;
     private Integer status;
+    private boolean isExist;
 }
