@@ -26,6 +26,16 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
+    public void add(User user) {
+
+        userMapper.add(user);
+    }
+
+
+    /**
+     * @return
+     */
+    @Override
     public User getOne() {
         return userMapper.getOne();
     }
@@ -56,6 +66,8 @@ public class UserServiceImpl implements UserService {
     public User getUserByUserName(String userName) {
         return userMapper.getUserByUserName(userName);
     }
+
+
 
 
 }

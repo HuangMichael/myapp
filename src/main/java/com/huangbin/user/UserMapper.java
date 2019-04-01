@@ -43,4 +43,10 @@ public interface UserMapper {
     User getUserByUserName(@Param("userName") String userName);
 
 
+    /**
+     * @param user
+     */
+     void add(User user);
+
+
 }

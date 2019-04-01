@@ -38,4 +38,7 @@ public interface UserService {
      * @return
      */
     User getUserByUserName(String userName);
+
+
+    void add(User user);
 }

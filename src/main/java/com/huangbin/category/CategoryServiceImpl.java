@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 用户业务类
+ * 种类业务类
  */
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -50,8 +50,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void updateLocName(Integer id,String locName) {
-        categoryMapper.updateLocName(id,locName);
+    public void updateLocName(Integer id, String locName) {
+        categoryMapper.updateLocName(id, locName);
     }
 
     @Override

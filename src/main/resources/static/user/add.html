@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增用户</title>
+</head>
+<body>
+<form>
+
+    用户名:<input id="userName" name="userName"/>
+    <br>
+    密&nbsp;&nbsp;&nbsp;码:<input id="password" name="password"/>
+    <br>
+    <input type="button" name="submit" id="submit" value="提交">
+</form>
+
+
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        $("#submit").on("click", function () {
+            let userName = $("#userName").val();
+            let password = $("#password").val();
+            let param = {
+                "userName": userName,
+                "password": password,
+                "nickName": userName,
+                "status": "1"
+            };
+            $.ajax({
+                type: "POST",
+                url: "/user/add",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(param),
+                dataType: "json",
+                success: function (message) {
+                    if (message) {
+                        alert("请求已提交！我们会尽快与您取得联系");
+                    }
+                },
+                error: function (message) {
+                    alert("提交失败");
+                }
+            });
+
+
+        });
+    });
+</script>
+</body>
+</html>

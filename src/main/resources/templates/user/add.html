@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增用户</title>
+</head>
+<body>
+<form>
+
+    用户名:<input id="userName" name="userName"/>
+    <br>
+    密&nbsp;&nbsp;&nbsp;码:<input id="password" name="password"/>
+    <br>
+    <input type="button" name="submit" id="submit" value="提交">
+</form>
+
+
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#submit").on("click", function () {
+
+
+            let userName = $("#userName").val();
+            let password = $("#password").val();
+            let param = {
+                "userName": userName,
+                "password": password,
+                "nickName": userName,
+                "status": "1"
+            }
+            $.post("/user/add", JSON.stringify(param), function (data) {
+                alert(data);
+            });
+        });
+    });
+
+
+</script>
+</body>
+</html>

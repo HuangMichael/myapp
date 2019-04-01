@@ -40,4 +40,9 @@
     <select id="getUserByUserName" resultMap="BaseResultMap" parameterType="java.lang.String">
         select * from user where user_name =#{userName} limit 0,1
     </select>
+
+
+    <insert id="add" parameterType="com.huangbin.user.User">
+      insert into user(user_name,password,nick_name,status)value(#{userName},#{password},#{nickName},#{status})
+    </insert>
 </mapper>
