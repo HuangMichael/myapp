@@ -4,6 +4,8 @@ package com.huangbin.location;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  *
  */
@@ -31,4 +33,17 @@ public interface LocationService {
      * @param id
      */
     void delete(Integer id);
+
+
+    /**
+     * @param id
+     * @param locName
+     */
+    void updateLocName(Integer id, String locName);
+
+
+    /**
+     * @return
+     */
+    List<Location> findAll();
 }

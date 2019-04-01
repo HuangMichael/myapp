@@ -8,11 +8,18 @@
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
         <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+        <result column="uid" jdbcType="VARCHAR" property="uid"/>
+        <result column="cn_name" jdbcType="VARCHAR" property="cnName"/>
         <result column="status" jdbcType="VARCHAR" property="status"/>
     </resultMap>
 
     <select id="getOne" resultMap="BaseResultMap">
         select * from user limit 0,1
+    </select>
+
+
+    <select id="findAll" resultType="com.huangbin.user.User">
+        select user_name,password ,nick_name,status from  user  where status = '1'
     </select>
 
 

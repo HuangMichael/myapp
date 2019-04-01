@@ -1,7 +1,7 @@
 package com.huangbin.user;
 
 
-import com.huangbin.controller.BaseController;
+import com.huangbin.web.BaseController;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +21,9 @@ public class UserController extends BaseController {
     UserService userService;
 
 
-    @RequestMapping("/findAll")
+    @RequestMapping("/users")
     @ResponseBody
     public List<User> findAll() {
-
         return userService.findAll();
     }
 

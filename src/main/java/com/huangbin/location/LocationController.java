@@ -3,6 +3,8 @@ package com.huangbin.location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  *
  */
@@ -21,9 +23,10 @@ public class LocationController {
      */
     @PostMapping("/add")
     @ResponseBody
-    public void add(@RequestBody Location location) {
+    public Location add(@RequestBody Location location) {
         System.out.println(location.toString());
         locationService.add(location);
+        return location;
     }
 
 
@@ -40,6 +43,16 @@ public class LocationController {
 
 
     /**
+     * @return 查询所有的位置
+     */
+    @GetMapping("/locations")
+    @ResponseBody
+    public List<Location> findAll() {
+        return locationService.findAll();
+    }
+
+
+    /**
      * @param id
      * @return 新增位置
      */
@@ -47,6 +60,17 @@ public class LocationController {
     public Location update(@PathVariable Integer id) {
         Location location = locationService.find(id);
         return location != null ? location : new Location(404, "404", "not found", "1");
+    }
+
+
+    /**
+     * @param id
+     * @return 新增位置
+     */
+    @PatchMapping("/updateLocName/{id}")
+    public Location updateLocName(@PathVariable Integer id, @RequestParam String locName) {
+        locationService.updateLocName(id, locName);
+        return null;
     }
 
 

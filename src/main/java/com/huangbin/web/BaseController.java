@@ -1,4 +1,4 @@
-package com.huangbin.controller;
+package com.huangbin.web;
 
 import lombok.extern.log4j.Log4j2;
 

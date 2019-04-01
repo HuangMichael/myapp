@@ -51,4 +51,14 @@ public class LocationServiceImpl implements LocationService {
     public void delete(Integer id) {
         locationMapper.delete(id);
     }
+
+    @Override
+    public void updateLocName(Integer id,String locName) {
+        locationMapper.updateLocName(id,locName);
+    }
+
+    @Override
+    public List<Location> findAll() {
+        return locationMapper.findAll();
+    }
 }

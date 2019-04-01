@@ -1,4 +1,4 @@
-package com.huangbin.controller;
+package com.huangbin.web;
 
 import com.huangbin.user.User;
 import com.huangbin.user.UserService;

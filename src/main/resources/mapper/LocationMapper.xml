@@ -22,4 +22,16 @@
     </select>
 
 
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete  from location where id =#{id}
+    </delete>
+
+    <update id="updateLocName">
+        update  location set loc_name = #{locName} where id = #{id}
+    </update>
+
+    <select id="findAll" resultType="com.huangbin.location.Location">
+        select id,loc_code,loc_name,status from location where status = '1'
+    </select>
+
 </mapper>
