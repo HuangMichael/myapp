@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangbin.department.DepartmentMapper">
+    <resultMap id="BaseResultMap" type="com.huangbin.department.Department">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="dept_code" jdbcType="VARCHAR" property="deptCode"/>
+        <result column="dept_name" jdbcType="VARCHAR" property="deptName"/>
+        <result column="parent_id" jdbcType="INTEGER" property="parentId"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+    </resultMap>
+
+    <sql id="dept_columns">
+            dept_code,dept_name,parent_id,status
+    </sql>
+
+    <insert id="add" parameterType="com.huangbin.department.Department">
+
+        insert into department (
+        <include refid="dept_columns"/>
+        )value(#{deptCode},#{deptName},#{parentId},#{status});
+
+    </insert>
+
+
+    <select id="find" parameterType="java.lang.Integer" resultType="com.huangbin.department.Department">
+        select id,
+        <include refid="dept_columns"/>
+        from department where id =#{id}
+    </select>
+
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete  from department where id =#{id}
+    </delete>
+
+
+    <update id="update">
+        update  department set dept_name = #{deptName} where id = #{id}
+    </update>
+
+
+    <select id="findAll" resultType="com.huangbin.department.Department">
+        select *
+        from department
+    </select>
+
+</mapper>
